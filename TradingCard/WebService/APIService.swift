@@ -6,7 +6,33 @@
 //
 
 import Foundation
+import UIKit
+
+enum APIStatus : Error {
+    case pass
+    case fail
+}
 
 struct APIService {
     
+    private let urlString = URL(string: "https://mocki.io/v1/8d2ac5e9-0263-4f6f-bb40-7d6a2cf40a92")!
+    
+    // GetCards will fetch data from a server and parse it using the Codable
+    func getCards(completion: @escaping ((_ data: TradingCards?, _ success: APIStatus) -> Void)) {
+        var aboutCanadaData: TradingCards?
+        // Using URLSession to make an api request
+        URLSession.shared.dataTask(with: urlString) { (dataResponse, urlResponse, error) in
+            guard let dataResponse = dataResponse else {
+                completion(nil, .fail) // The data is nil then send fail status
+                return
+            }
+            do {
+                aboutCanadaData = try JSONDecoder().decode(TradingCards.self, from: dataResponse)
+                completion(aboutCanadaData, .pass)
+            }  catch let err {
+                print(err)
+                completion(nil, .fail) // If any error occurs send then fail status
+            }
+        }.resume()
+    }
 }

@@ -7,11 +7,15 @@
 
 import Foundation
 
-
 struct TradingCards : Codable {
-
+    let status : Int?
+    let cards : [Cards]?
 }
 
 struct Cards : Codable {
-
+    let cardNumber : String?
+    let userName : String?
+    let expiryDate : String?
+    let cardDetails : String?
+    let cardType : String?
 }
