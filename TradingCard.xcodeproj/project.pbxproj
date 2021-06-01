@@ -15,6 +15,9 @@
 		D70990CB2664E3000057BFCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D70990C92664E3000057BFCF /* LaunchScreen.storyboard */; };
 		D70990D62664E3000057BFCF /* TradingCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70990D52664E3000057BFCF /* TradingCardTests.swift */; };
 		D70990E12664E3000057BFCF /* TradingCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70990E02664E3000057BFCF /* TradingCardUITests.swift */; };
+		D7FBF2C92666123F00067BC7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2C82666123F00067BC7 /* APIService.swift */; };
+		D7FBF2D12666127400067BC7 /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2D02666127400067BC7 /* CardsViewModel.swift */; };
+		D7FBF2D62666128E00067BC7 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2D52666128E00067BC7 /* Cards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D70990DC2664E3000057BFCF /* TradingCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradingCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70990E02664E3000057BFCF /* TradingCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingCardUITests.swift; sourceTree = "<group>"; };
 		D70990E22664E3000057BFCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7FBF2C82666123F00067BC7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D7FBF2D02666127400067BC7 /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
+		D7FBF2D52666128E00067BC7 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,11 @@
 		D70990BD2664E2FE0057BFCF /* TradingCard */ = {
 			isa = PBXGroup;
 			children = (
-				D70990BE2664E2FE0057BFCF /* AppDelegate.swift */,
-				D70990C02664E2FE0057BFCF /* SceneDelegate.swift */,
-				D70990C22664E2FE0057BFCF /* ViewController.swift */,
+				D7FBF2C72666115700067BC7 /* WebService */,
+				D7FBF2C62666114100067BC7 /* ViewModels */,
+				D7FBF2C52666111C00067BC7 /* Models */,
+				D7FBF2BA266610EE00067BC7 /* Common */,
+				D7FBF2C12666110300067BC7 /* Controllers */,
 				D70990C42664E2FE0057BFCF /* Main.storyboard */,
 				D70990C72664E3000057BFCF /* Assets.xcassets */,
 				D70990C92664E3000057BFCF /* LaunchScreen.storyboard */,
@@ -126,6 +134,47 @@
 				D70990E22664E3000057BFCF /* Info.plist */,
 			);
 			path = TradingCardUITests;
+			sourceTree = "<group>";
+		};
+		D7FBF2BA266610EE00067BC7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D70990BE2664E2FE0057BFCF /* AppDelegate.swift */,
+				D70990C02664E2FE0057BFCF /* SceneDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D7FBF2C12666110300067BC7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D70990C22664E2FE0057BFCF /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D7FBF2C52666111C00067BC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D7FBF2D52666128E00067BC7 /* Cards.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D7FBF2C62666114100067BC7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D7FBF2D02666127400067BC7 /* CardsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D7FBF2C72666115700067BC7 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				D7FBF2C82666123F00067BC7 /* APIService.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +309,9 @@
 			files = (
 				D70990C32664E2FE0057BFCF /* ViewController.swift in Sources */,
 				D70990BF2664E2FE0057BFCF /* AppDelegate.swift in Sources */,
+				D7FBF2D12666127400067BC7 /* CardsViewModel.swift in Sources */,
+				D7FBF2D62666128E00067BC7 /* Cards.swift in Sources */,
+				D7FBF2C92666123F00067BC7 /* APIService.swift in Sources */,
 				D70990C12664E2FE0057BFCF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
