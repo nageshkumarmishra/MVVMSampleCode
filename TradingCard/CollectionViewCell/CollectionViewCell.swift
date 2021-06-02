@@ -17,7 +17,7 @@ class DataCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var cardNumber: UILabel!
     @IBOutlet weak var cardType: UILabel!
-    @IBOutlet weak var cardDetailLabel: UILabel!
+    @IBOutlet weak var cardDetailTextView: UITextView!
     
     var card : Cards? {
         didSet {
@@ -25,7 +25,7 @@ class DataCollectionViewCell: UICollectionViewCell {
             self.userName.text = card?.userName
             self.expireDate.text = card?.expiryDate
             self.cardType.text = card?.cardType
-            self.cardDetailLabel.text = card?.cardDetails
+           self.cardDetailTextView.text = card?.cardDetails
         }
     }
     
@@ -44,15 +44,19 @@ class DataCollectionViewCell: UICollectionViewCell {
     
     func flip(displayItem: Cards) {
         var displayFlipItem = displayItem
-        dataView.isHidden = !displayFlipItem.isItemSelected!
-        dataDetailView.isHidden = displayFlipItem.isItemSelected!
         
-        UIView.transition(from: displayFlipItem.isItemSelected! ? dataView : dataDetailView,
-                          to: displayFlipItem.isItemSelected! ? dataView : dataDetailView,
+        guard let isItemSelected = displayFlipItem.isItemSelected else {
+            return
+        }
+        dataView.isHidden = !isItemSelected
+        dataDetailView.isHidden = isItemSelected
+        
+        UIView.transition(from:isItemSelected ? dataView : dataDetailView,
+                          to: isItemSelected ? dataView : dataDetailView,
                           duration: spinTimeInterval,
                           options: [.transitionFlipFromLeft, .showHideTransitionViews])
         
-        displayFlipItem.isItemSelected = !displayFlipItem.isItemSelected!
+        displayFlipItem.isItemSelected = !isItemSelected
         self.card = displayFlipItem
     }
 }

@@ -149,32 +149,33 @@
                                                     <rect key="frame" x="5" y="5" width="385" height="121"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haO-FA-T8F">
-                                                            <rect key="frame" x="5" y="5" width="69.5" height="12"/>
+                                                            <rect key="frame" x="5" y="5" width="62.5" height="12"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="12" id="623-6v-qUI"/>
-                                                                <constraint firstAttribute="width" constant="69.5" id="pc4-my-2ye"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8Z-IG-LIP">
-                                                            <rect key="frame" x="5" y="22" width="300" height="94"/>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH6-Y7-6Kl">
+                                                            <rect key="frame" x="5" y="22" width="333" height="94"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="94" id="vAK-fb-Ddw"/>
-                                                                <constraint firstAttribute="width" constant="300" id="wUR-HG-NJN"/>
+                                                                <constraint firstAttribute="width" constant="333" id="he8-q4-P82"/>
                                                             </constraints>
-                                                            <string key="text">They are issued by your bank or other financial institution, and use funds directly from your bank account. Accepted worldwide, Visa Debit cards offer quick, secure and convenient access to your money in person, online, overseas and over the phone</string>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="Z8Z-IG-LIP" secondAttribute="bottom" constant="5" id="GWL-gj-flJ"/>
-                                                        <constraint firstItem="Z8Z-IG-LIP" firstAttribute="leading" secondItem="gf6-xM-F9X" secondAttribute="leading" constant="5" id="Vhk-bo-V6U"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="haO-FA-T8F" secondAttribute="trailing" constant="20" symbolic="YES" id="BUn-Ws-pS2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="DH6-Y7-6Kl" secondAttribute="bottom" constant="5" id="WLh-bt-4Dy"/>
                                                         <constraint firstItem="haO-FA-T8F" firstAttribute="top" secondItem="gf6-xM-F9X" secondAttribute="top" constant="5" id="ZMU-el-Eh4"/>
+                                                        <constraint firstItem="DH6-Y7-6Kl" firstAttribute="top" secondItem="haO-FA-T8F" secondAttribute="bottom" constant="5" id="mok-gd-RFS"/>
+                                                        <constraint firstItem="DH6-Y7-6Kl" firstAttribute="leading" secondItem="gf6-xM-F9X" secondAttribute="leading" constant="5" id="uuw-wb-s58"/>
                                                         <constraint firstItem="haO-FA-T8F" firstAttribute="leading" secondItem="gf6-xM-F9X" secondAttribute="leading" constant="5" id="w4d-l2-KnL"/>
                                                     </constraints>
                                                 </view>
@@ -203,7 +204,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="405" height="141"/>
                                 <connections>
-                                    <outlet property="cardDetailLabel" destination="Z8Z-IG-LIP" id="Ibu-Ea-cSX"/>
+                                    <outlet property="cardDetailTextView" destination="DH6-Y7-6Kl" id="N7I-5Z-Gyy"/>
                                     <outlet property="cardNumber" destination="6yQ-b0-110" id="b8v-aT-c7w"/>
                                     <outlet property="cardType" destination="nOM-um-iEt" id="wut-P6-VSM"/>
                                     <outlet property="dataDetailView" destination="ofO-CQ-Fmw" id="ScW-Kh-ob2"/>
