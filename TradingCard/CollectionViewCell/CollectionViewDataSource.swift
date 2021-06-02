@@ -13,7 +13,7 @@ class CollectionViewDataSource<CELL : UICollectionViewCell,T> : NSObject, UIColl
     private var items : [T]?
     var configureCell : (CELL, T?) -> () = {_,_ in }
     
-    init(cellIdentifier : String, items : [T]?, configureCell : @escaping (CELL, T?) -> ()) {
+    init( _ cellIdentifier : String, items : [T]?, configureCell : @escaping (CELL, T?) -> ()) {
         self.cellIdentifier = cellIdentifier
         self.items =  items
         self.configureCell = configureCell

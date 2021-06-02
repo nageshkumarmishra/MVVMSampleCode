@@ -7,9 +7,14 @@
 
 import Foundation
 
+protocol CardsViewModelErrorDelegate : class {
+    func failSatus()
+}
+
 class CardsViewModel : NSObject {
     var apiService : APIService?
     var bindViewModelToController : (() -> ()) = {}
+    var delegate : CardsViewModelErrorDelegate? = nil
     
     private(set) var dataFeed : TradingCards? {
         didSet {
@@ -31,6 +36,7 @@ class CardsViewModel : NSObject {
                 self.dataFeed = dataValue
                 break
             case .fail:
+                self.delegate?.failSatus()
                 break
             }
         }

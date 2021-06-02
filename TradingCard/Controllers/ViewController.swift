@@ -7,7 +7,16 @@
 
 import UIKit
 
+struct Constant {
+    static let collectionHeight : CGFloat = 141.0
+    static let minimumLineSpacing : CGFloat = 4.0
+    static let minimumInterimSpacing : CGFloat = 1
+}
+
+
 class ViewController: UICollectionViewController {
+    
+    static let cellIdentifier =  "reuseIdentifier"
     
     private var cardsViewModel : CardsViewModel!
     private var dataSource : CollectionViewDataSource<DataCollectionViewCell,Cards>!
@@ -19,7 +28,8 @@ class ViewController: UICollectionViewController {
     }
     
     func callToViewModelForUIUpdate(){
-        self.cardsViewModel =  CardsViewModel()       
+        self.cardsViewModel =  CardsViewModel()
+        self.cardsViewModel.delegate = self
         self.cardsViewModel.bindViewModelToController = {
             self.updateDataSource()
         }
@@ -27,7 +37,7 @@ class ViewController: UICollectionViewController {
     
     func updateDataSource(){
         
-        self.dataSource = CollectionViewDataSource(cellIdentifier: "reuseIdentifier", items: self.cardsViewModel.dataFeed?.cards, configureCell: { (cell, data) in
+        self.dataSource = CollectionViewDataSource(ViewController.cellIdentifier, items: self.cardsViewModel.dataFeed?.cards, configureCell: { (cell, data) in
             cell.card = data
         })
         
@@ -39,18 +49,32 @@ class ViewController: UICollectionViewController {
     }
 }
 
+// MARK: CardsViewModelErrorDelegate
+extension ViewController : CardsViewModelErrorDelegate {
+    
+    static let title = "Alert!!"
+    static let message = "Data fetch failed"
+    
+    func failSatus() {
+        DispatchQueue.main.async {
+            AlertView().showAlert(title:ViewController.title, message: ViewController.message , viewController: self)
+        }
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
 extension ViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4;
+        return Constant.minimumLineSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1;
+        return Constant.minimumInterimSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 141.0)
+        return CGSize(width: collectionView.frame.width, height: Constant.collectionHeight)
     }
     
 }
