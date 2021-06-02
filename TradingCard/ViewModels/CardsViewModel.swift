@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CardsViewModelErrorDelegate : class {
-    func failSatus()
+    func failStatus()
 }
 
 class CardsViewModel : NSObject {
@@ -36,7 +36,7 @@ class CardsViewModel : NSObject {
                 self.dataFeed = dataValue
                 break
             case .fail:
-                self.delegate?.failSatus()
+                self.delegate?.failStatus()
                 break
             }
         }
