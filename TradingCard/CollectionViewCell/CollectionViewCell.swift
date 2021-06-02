@@ -9,6 +9,8 @@ import UIKit
 
 class DataCollectionViewCell: UICollectionViewCell {
     
+    static let cornerRadius: CGFloat = 15.0
+    
     private var spinTimeInterval = 0.5
     
     @IBOutlet weak var dataDetailView: UIView!
@@ -31,8 +33,8 @@ class DataCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.dataView.layer.cornerRadius = 15.0
-        self.dataDetailView.layer.cornerRadius = 15.0
+        self.dataView.layer.cornerRadius = DataCollectionViewCell.cornerRadius
+        self.dataDetailView.layer.cornerRadius = DataCollectionViewCell.cornerRadius
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(flipTapped))
         self.addGestureRecognizer(singleTap)
         

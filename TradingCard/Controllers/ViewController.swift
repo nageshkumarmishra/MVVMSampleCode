@@ -55,7 +55,7 @@ extension ViewController : CardsViewModelErrorDelegate {
     static let title = "Alert!!"
     static let message = "Data fetch failed"
     
-    func failSatus() {
+    func failStatus() {
         DispatchQueue.main.async {
             AlertView().showAlert(title:ViewController.title, message: ViewController.message , viewController: self)
         }
