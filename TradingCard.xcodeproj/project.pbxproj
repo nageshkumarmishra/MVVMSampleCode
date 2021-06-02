@@ -19,6 +19,7 @@
 		D7FBF2D12666127400067BC7 /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2D02666127400067BC7 /* CardsViewModel.swift */; };
 		D7FBF2D62666128E00067BC7 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2D52666128E00067BC7 /* Cards.swift */; };
 		D7FBF2DD2666367000067BC7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2DC2666367000067BC7 /* CollectionViewCell.swift */; };
+		D7FBF2E626666F0A00067BC7 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBF2E526666F0A00067BC7 /* CollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D7FBF2D02666127400067BC7 /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
 		D7FBF2D52666128E00067BC7 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		D7FBF2DC2666367000067BC7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D7FBF2E526666F0A00067BC7 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				D7FBF2DC2666367000067BC7 /* CollectionViewCell.swift */,
+				D7FBF2E526666F0A00067BC7 /* CollectionViewDataSource.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				D70990C32664E2FE0057BFCF /* ViewController.swift in Sources */,
 				D70990BF2664E2FE0057BFCF /* AppDelegate.swift in Sources */,
 				D7FBF2D12666127400067BC7 /* CardsViewModel.swift in Sources */,
+				D7FBF2E626666F0A00067BC7 /* CollectionViewDataSource.swift in Sources */,
 				D7FBF2DD2666367000067BC7 /* CollectionViewCell.swift in Sources */,
 				D7FBF2D62666128E00067BC7 /* Cards.swift in Sources */,
 				D7FBF2C92666123F00067BC7 /* APIService.swift in Sources */,
