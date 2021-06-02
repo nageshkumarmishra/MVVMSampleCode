@@ -18,4 +18,6 @@ struct Cards : Codable {
     let expiryDate : String?
     let cardDetails : String?
     let cardType : String?
+    var isItemSelected : Bool?
+
 }
