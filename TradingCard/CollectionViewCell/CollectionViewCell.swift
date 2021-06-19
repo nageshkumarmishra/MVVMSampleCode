@@ -41,7 +41,11 @@ class DataCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func flipTapped() {
-        flip(displayItem: card!)
+        guard let card = card else {
+            print("No data available in cards ")
+            return
+        }
+        flip(displayItem: card)
     }
     
     func flip(displayItem: Cards) {
