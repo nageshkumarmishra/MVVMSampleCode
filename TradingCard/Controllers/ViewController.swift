@@ -57,7 +57,7 @@ extension ViewController : CardsViewModelErrorDelegate {
     
     func failStatus() {
         DispatchQueue.main.async {
-            AlertView().showAlert(title:ViewController.title, message: ViewController.message , viewController: self)
+            self.showAlert(title:ViewController.title, message: ViewController.message)
         }
     }
 }
