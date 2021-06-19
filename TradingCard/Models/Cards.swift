@@ -19,5 +19,5 @@ struct Cards : Codable {
     let cardDetails : String?
     let cardType : String?
     var isItemSelected : Bool?
-
+    
 }

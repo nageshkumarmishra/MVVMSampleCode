@@ -27,7 +27,7 @@ class DataCollectionViewCell: UICollectionViewCell {
             self.userName.text = card?.userName
             self.expireDate.text = card?.expiryDate
             self.cardType.text = card?.cardType
-           self.cardDetailTextView.text = card?.cardDetails
+            self.cardDetailTextView.text = card?.cardDetails
         }
     }
     
@@ -37,7 +37,6 @@ class DataCollectionViewCell: UICollectionViewCell {
         self.dataDetailView.layer.cornerRadius = DataCollectionViewCell.cornerRadius
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(flipTapped))
         self.addGestureRecognizer(singleTap)
-        
     }
     
     @objc func flipTapped() {

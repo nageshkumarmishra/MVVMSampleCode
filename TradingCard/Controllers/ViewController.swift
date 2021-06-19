@@ -13,11 +13,9 @@ struct Constant {
     static let minimumInterimSpacing : CGFloat = 1
 }
 
-
 class ViewController: UICollectionViewController {
     
     static let cellIdentifier =  "reuseIdentifier"
-    
     private var cardsViewModel : CardsViewModel!
     private var dataSource : CollectionViewDataSource<DataCollectionViewCell,Cards>!
     

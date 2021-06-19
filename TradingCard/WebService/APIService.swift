@@ -23,9 +23,9 @@ enum APIStatus : Error {
 }
 
 struct APIService {
-        
+    
     let urlString = URL(staticString: "https://mocki.io/v1/e93144a0-0c50-4cb4-b13b-f031613fe61e")
-
+    
     // GetCards will fetch data from a server and parse it using the Codable
     func getCards(completion: @escaping ((_ data: TradingCards?, _ success: APIStatus) -> Void)) {
         var aboutCanadaData: TradingCards?
